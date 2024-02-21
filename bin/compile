@@ -174,4 +174,10 @@ EOF
 
     java::war::install_webapp_runner "${build_dir}" "${cache_dir}" \
         "${java_version}" "${webapp_runner_version}"
+
+    # Make sure WAR_PATH is exported when RUNning:
+    cat > "${build_dir}/.profile.d/war.sh" << EOF
+export WAR_PATH="${WAR_PATH}"
+EOF
+
 fi

@@ -11,11 +11,7 @@ file exists where `WAR_PATH` points. If the file does actually exist, it is
 used and served as the application. Otherwise, the buildpack fails.
 
 If `WAR_PATH` is not set, the buildpack falls back to checking if a .war file
-exists at the root of the project and uses it if it does exist.
-
-If you want to use a .war file stored at the root of your application, we
-advise to unset the `WAR_PATH` environment variable and let the platform do its
-magic.
+exists somewhere and uses the first one, if any.
 
 ### Deployment Workflow
 
@@ -50,6 +46,4 @@ Defaults to `9.0.84.0`
 #### `WAR_PATH`
 
 Path to the .war file you want to run.\
-When unset, the platform tries to run a .war file at the root of the
-application.\
 Defaults to being unset
